@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     Fragment1 fragment1;
     Fragment2 fragment2;
 
-//test 2
+//test 2sdfsdf
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
