@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     Fragment1 fragment1;
     Fragment2 fragment2;
+    //테스트
 
 
     @Override
