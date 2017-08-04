@@ -10,8 +10,8 @@ public class MainActivity extends AppCompatActivity {
 
     Fragment1 fragment1;
     Fragment2 fragment2;
-    //테스트
 
+//test 2
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
