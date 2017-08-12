@@ -69,8 +69,20 @@ public class MainActivity extends AppCompatActivity {
                     // The toggle is disabled
                 }
             }
-        });*/
+        });
 
+
+    private void displayTemperature(int temperature) {
+        TextView teperatureTextView = (TextView) findViewById(R.id.temperature_text_view);
+        temperatureTextView.setText("" + temperature);
+    }
+
+
+    private void displayWater(int waterLevel) {
+        TextView waterTextView = (TextView) findViewById(R.id.water_text_view);
+        temperatureTextView.setText("" + waterLevel);
+    }
+*/
 
 
     }
