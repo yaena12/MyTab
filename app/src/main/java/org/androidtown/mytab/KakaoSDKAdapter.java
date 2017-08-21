@@ -1,9 +1,11 @@
 package org.androidtown.mytab;
 
+
+
 /**
- * Created by Lynn on 2017-08-19.
+ * Created by hp on 2016-01-26.
  */
-import android.app.Activity;
+
 import android.content.Context;
 
 import com.kakao.auth.ApprovalType;
@@ -36,6 +38,11 @@ public class KakaoSDKAdapter extends KakaoAdapter {
             }
 
             @Override
+            public boolean isSecureMode() {
+                return false;
+            }
+
+            @Override
             public ApprovalType getApprovalType() {
                 return ApprovalType.INDIVIDUAL;
             }
@@ -50,10 +57,10 @@ public class KakaoSDKAdapter extends KakaoAdapter {
     @Override
     public IApplicationConfig getApplicationConfig() {
         return new IApplicationConfig() {
-            @Override
+           /* @Override
             public Activity getTopActivity() {
                 return GlobalApplication.getCurrentActivity();
-            }
+            }*/
 
             @Override
             public Context getApplicationContext() {
