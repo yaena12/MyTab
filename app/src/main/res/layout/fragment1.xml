@@ -1,73 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
+    <!-- 어항사진 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:layout_weight="0.445">
 
-    <ImageView
-        android:id="@+id/fishTank"
-        android:layout_width="wrap_content"
-        android:layout_height="220dp"
-        app:srcCompat="@drawable/fishtanklampon"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/fishtankdefault"
+            android:id="@+id/imageView"/>
+    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="20dp"
-        android:layout_height="270dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/fishTank"
-        android:layout_marginTop="11dp"
-        app:srcCompat="@android:color/holo_red_dark" />
+    <!-- 어항사진 밑에 라인 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:weightSum="1"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/temptext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/timetext"
-        android:layout_alignBottom="@+id/timetext"
-        android:layout_marginLeft="51dp"
-        android:layout_marginStart="51dp"
-        android:layout_toEndOf="@+id/imageView"
-        android:layout_toRightOf="@+id/imageView"
-        android:text="TextView" />
+        <!-- 조명 칸 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.495"
+            android:weightSum="1">
 
-    <TextView
-        android:id="@+id/timetext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="45dp"
-        android:layout_marginRight="45dp"
-        android:text="TextView"
-        android:layout_alignBottom="@+id/imageView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="48dp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.7"
+                android:gravity="left|center"
+                android:text="조명"
+                android:textIsSelectable="false"
+                android:textSize="30dp"
+                android:textStyle="bold"></TextView>
 
-    <ToggleButton
-        android:id="@+id/toggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_alignLeft="@+id/timetext"
-        android:layout_alignStart="@+id/timetext"
-        android:layout_alignTop="@+id/imageView"
-        android:text="ToggleButton" />
+            <ToggleButton
+                android:id="@+id/lightButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:layout_margin="5dp"
+                android:text="ON">
+            </ToggleButton>
 
-    <ToggleButton
-        android:id="@+id/toggleButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:text="ToggleButton"
-        android:layout_below="@+id/toggleButton"
-        android:layout_alignLeft="@+id/toggleButton"
-        android:layout_alignStart="@+id/toggleButton"
-        android:layout_marginTop="10dp" />
+        </LinearLayout>
+        <!-- 조명 밑에 라인 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.005"
+            android:background="#999999">
+        </LinearLayout>
+        <!-- 수동환수 칸 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.495"
+            android:weightSum="1">
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:text="수동 환수"
+                android:textStyle="bold"
+                android:gravity="left|center"
+                android:textSize="30dp"
+                android:layout_marginLeft="5dp">
+            </TextView>
+            <Button
+                android:id="@+id/waterButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:layout_margin="5dp"
+                android:text="OFF">
+            </Button>
+        </LinearLayout>
+        <!-- 수동 환수 밑에 라인 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.003"
+            android:background="#999999">
+        </LinearLayout>
+    </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.001"
+        android:background="#999999">
+    </LinearLayout>
+
+    <!-- 조명, 수동환수 TextArea, Button -->
+
+    <!-- 온도, 수위 칸 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.35"
+        android:weightSum="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4975"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:text="온도"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="5dp"
+                android:layout_weight="0.7">
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:id="@+id/timetext"
+                android:text="시간"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <!-- 온도 수위 가운데 라인 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.001"
+            android:background="#999999">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4975"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:text="수위"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.7"
+                android:layout_margin="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:id="@+id/temptext"
+                android:text="시간"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
